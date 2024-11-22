@@ -13,7 +13,6 @@ public class AlumnoServiceImpl implements AlumnoService {
         Set<Materia> materiasHortencia = new HashSet<>();
         Set<Materia> materiasCris = new HashSet<>();
         Set<Materia> materiasDevora = new HashSet<>();
-        // Crear materias para Juan
         Materia matematicasCris = new Materia(
                 MateriaEnum.MATEMATICAS,
                 new ArrayList<>(Arrays.asList(5.5, 6.0, 5.8))
@@ -27,15 +26,12 @@ public class AlumnoServiceImpl implements AlumnoService {
         );
         materiasCris.add(lenguajeCris);
 
-        // Crear a Juan
         Alumno cris = new Alumno(
                 "21.629.852-8",
-                "Cris",
                 "Portales",
                 "Av.Balmaceda 557",
                 materiasCris
         );
-        // Crear materias para María
         Materia matematicasHotencia = new Materia(
                 MateriaEnum.MATEMATICAS,
                 new ArrayList<>(Arrays.asList(6.5, 6.8, 7.0))
@@ -46,7 +42,6 @@ public class AlumnoServiceImpl implements AlumnoService {
                 new ArrayList<>(Arrays.asList(6.3, 6.0, 6.4))
         );
         materiasHortencia.add(historiaHortencia);
-        // Crear a María
         Alumno hortencia = new Alumno(
                 "18.546.232-1",
                 "Hortencia",
@@ -62,7 +57,6 @@ public class AlumnoServiceImpl implements AlumnoService {
         );
         materiasDevora.add(lenguajeDevora);
 
-        // Crear a Pedro (solo con una materia inicialmente)
 
         Alumno devora = new Alumno(
                 "18.527.491-7",
@@ -80,11 +74,9 @@ public class AlumnoServiceImpl implements AlumnoService {
     }
 
 
-
     @Override
     public void crearAlumno(Alumno alumno) {
         listaAlumnos.put(alumno.getRut(), alumno);
-
     }
 
     @Override
