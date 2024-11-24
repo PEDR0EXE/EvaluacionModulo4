@@ -14,10 +14,22 @@ public class ArchivosServiceImpl implements ArchivosService {
     private List<Alumno> alumnosACargar;
     private final PromedioService promedioServiceImpl;
 
-
+    /**
+     * Constructor que inicializa el servicio de promedio.
+     *
+     * @param promedioServiceImpl una implementación de {@link PromedioService} utilizada para calcular promedios.
+     */
     public ArchivosServiceImpl(PromedioService promedioServiceImpl) {
         this.promedioServiceImpl = promedioServiceImpl;
     }
+
+    /**
+     * Exporta los datos de los alumnos y sus materias a un archivo de texto.
+     *
+     * @param alumnos     un mapa que contiene los alumnos, con su RUT como clave y el objeto {@link Alumno} como valor.
+     * @param rutaArchivo la ruta completa del archivo donde se exportarán los datos.
+     */
+
 
     @Override
     public void exportarDatos(Map<String, Alumno> alumnos, String rutaArchivo) {
@@ -49,6 +61,15 @@ public class ArchivosServiceImpl implements ArchivosService {
         }
 
     }
+
+    /**
+     * Genera una carpeta y un archivo de texto en una ubicación específica.
+     *
+     * Si la carpeta no existe, se crea. Luego, intenta crear un archivo llamado "promedio.txt" dentro de esa carpeta.
+     *
+     * @param ruta la ruta de la carpeta donde se creará el archivo.
+     * @return la ruta completa del archivo creado o un mensaje de error en caso de fallo.
+     */
 
     @Override
     public String Generar_Carpeta_achivo(String ruta) {

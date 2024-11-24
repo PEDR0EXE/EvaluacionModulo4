@@ -2,6 +2,40 @@ package com.ecamp.utilidades;
 
 public class ValidarUtil {
 
+
+    /**
+     * Formatea un RUT chileno añadiendo puntos y guiones para estandarizar su presentación.
+     * <p>
+     * Este método realiza las siguientes acciones:
+     * <ul>
+     *     <li>Valida que el RUT no sea nulo ni esté vacío.</li>
+     *     <li>Elimina caracteres innecesarios, como espacios y símbolos no permitidos.</li>
+     *     <li>Verifica que el cuerpo del RUT contenga solo números y que el dígito verificador sea un número o la letra 'K'.</li>
+     *     <li>Formatea el cuerpo del RUT con puntos cada tres dígitos y añade un guion antes del dígito verificador.</li>
+     * </ul>
+     * </p>
+     * <p>
+     * Ejemplo de uso:
+     * <pre>
+     * {@code
+     * String rutFormateado = formatRut("12345678K"); // Retorna "12.345.678-K"
+     * }
+     * </pre>
+     * </p>
+     * <p>
+     * Validaciones:
+     * <ul>
+     *     <li>El RUT debe tener entre 8 y 12 caracteres después de eliminar espacios y caracteres no permitidos.</li>
+     *     <li>El cuerpo del RUT debe contener solo números.</li>
+     *     <li>El dígito verificador debe ser un número o la letra 'K' (mayúscula o minúscula).</li>
+     * </ul>
+     * </p>
+     *
+     * @param rutSinFormato El RUT sin formato (puede incluir espacios, guiones u otros caracteres).
+     * @return El RUT formateado con puntos y un guion (ejemplo: "12.345.678-K").
+     * @throws IllegalArgumentException Si el RUT es nulo, está vacío, no tiene un formato válido o no cumple con las reglas del RUT chileno.
+     */
+
     public static String formatRut(String rutSinFormato) {
         try {
             // Validar que el String no sea nulo ni vacío
