@@ -27,6 +27,11 @@ public class Menu extends MenuTemplate {
 
     @Override
     protected void crearAlumno() {
+        /**
+         * Se agrega el alumno con sus validacion cada variable del objecto alumno
+         * tiene su contenido de validacion  incluido que el rut tiene su validaciones en donde tiene su
+         * formato no es nesesario ingresar el rut con punto y guiones
+         */
         Utilidad.limpiarPantalla();
         Scanner sc = ScannerSingleton.getInstance();
         Alumno alumno = new Alumno();
